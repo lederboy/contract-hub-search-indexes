@@ -1,7 +1,7 @@
 {
     "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#indexes/$entity",
     "@odata.etag": "\"0x8DCDF118441F503\"",
-    "name": "pharmacy-chunk-index",
+    "name": "pharmacy_chunk-index",
     "defaultScoringProfile": null,
     "fields": [
       {

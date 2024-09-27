@@ -1,7 +1,7 @@
 {
     "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#indexes/$entity",
-    "@odata.etag": "\"0x8DCDF11EB4CA79F\"",
-    "name": "pharmacy-summary-index",
+    "@odata.etag": "\"0x8DCDF11F50AE1EF\"",
+    "name": "pharmacy_table-index",
     "defaultScoringProfile": null,
     "fields": [
       {
@@ -57,7 +57,7 @@
         "analyzer": null,
         "normalizer": null,
         "dimensions": 1536,
-        "vectorSearchProfile": "vector-profile-1722880301351",
+        "vectorSearchProfile": "vector-profile-1722884703393",
         "vectorEncoding": null,
         "synonymMaps": []
       },
@@ -99,28 +99,12 @@
       "defaultConfiguration": null,
       "configurations": [
         {
-          "name": "summary-semantic-config",
-          "prioritizedFields": {
-            "titleField": null,
-            "prioritizedContentFields": [
-              {
-                "fieldName": "fileName"
-              }
-            ],
-            "prioritizedKeywordsFields": []
-          }
-        },
-        {
-          "name": "basic-config",
+          "name": "table-semantic-config",
           "prioritizedFields": {
             "titleField": {
               "fieldName": "fileName"
             },
-            "prioritizedContentFields": [
-              {
-                "fieldName": "content"
-              }
-            ],
+            "prioritizedContentFields": [],
             "prioritizedKeywordsFields": []
           }
         },
@@ -143,7 +127,7 @@
     "vectorSearch": {
       "algorithms": [
         {
-          "name": "vector-config-1722880302529",
+          "name": "vector-config-1722884704544",
           "kind": "hnsw",
           "hnswParameters": {
             "metric": "cosine",
@@ -156,21 +140,15 @@
       ],
       "profiles": [
         {
-          "name": "vector-profile-1722880301351",
-          "algorithm": "vector-config-1722880302529",
-          "vectorizer": "vectorizer-1722880304838",
-          "compression": "vector-1722880268297-compressor"
-        },
-        {
-          "name": "vector-profile-1722893877197",
-          "algorithm": "vector-config-1722880302529",
-          "vectorizer": "vectorizer-1722880304838",
-          "compression": null
+          "name": "vector-profile-1722884703393",
+          "algorithm": "vector-config-1722884704544",
+          "vectorizer": "vectorizer-1722884707753",
+          "compression": "vector-1722884669985-compressor"
         }
       ],
       "vectorizers": [
         {
-          "name": "vectorizer-1722880304838",
+          "name": "vectorizer-1722884707753",
           "kind": "azureOpenAI",
           "azureOpenAIParameters": {
             "resourceUri": "https://contracts-azoai0.openai.azure.com",
@@ -186,7 +164,7 @@
       ],
       "compressions": [
         {
-          "name": "vector-1722880268297-compressor",
+          "name": "vector-1722884669985-compressor",
           "kind": "scalarQuantization",
           "rerankWithOriginalVectors": true,
           "defaultOversampling": 4,

@@ -1,11 +1,11 @@
 {
     "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#indexers/$entity",
-    "@odata.etag": "\"0x8DCDE7982DDBD76\"",
-    "name": "pharmacy-summary-indexer",
+    "@odata.etag": "\"0x8DCDE79890CE53C\"",
+    "name": "pharmacy-json-indexer",
     "description": null,
-    "dataSourceName": "pharmacy-summary-datasource",
+    "dataSourceName": "pharmacy-json-datasource",
     "skillsetName": null,
-    "targetIndexName": "pharmacy-summary-index",
+    "targetIndexName": "pharmacy_json-index",
     "disabled": null,
     "schedule": null,
     "parameters": {
@@ -14,7 +14,7 @@
       "maxFailedItemsPerBatch": null,
       "base64EncodeKeys": null,
       "configuration": {
-        "parsingMode": "json"
+        "parsingMode": "jsonArray"
       }
     },
     "fieldMappings": [],

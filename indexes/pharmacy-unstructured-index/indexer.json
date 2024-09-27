@@ -3,9 +3,9 @@
     "@odata.etag": "\"0x8DCDF130F0CD2B8\"",
     "name": "pharmacy-unstructured-indexer",
     "description": null,
-    "dataSourceName": "pharmacy-unstructured-datsource",
+    "dataSourceName": "pharmacy-unstructured-datasource",
     "skillsetName": "pharmacy-unstructured-skillset",
-    "targetIndexName": "pharmacy-unstructured-index",
+    "targetIndexName": "pharmacy_unstructured-index",
     "disabled": null,
     "schedule": {
       "interval": "PT1H",

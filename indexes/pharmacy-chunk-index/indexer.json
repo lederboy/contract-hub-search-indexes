@@ -1,11 +1,11 @@
 {
     "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#indexers/$entity",
-    "@odata.etag": "\"0x8DCDE797C0F5F6E\"",
-    "name": "pharmacy-table-indexer",
+    "@odata.etag": "\"0x8DCDE79732ADB02\"",
+    "name": "pharmacy-chunk-indexer",
     "description": null,
-    "dataSourceName": "pharmacy-table-datasource",
+    "dataSourceName": "pharmacy-chunk-datasource",
     "skillsetName": null,
-    "targetIndexName": "pharmacy-table-index",
+    "targetIndexName": "pharmacy_chunk-index",
     "disabled": null,
     "schedule": null,
     "parameters": {
