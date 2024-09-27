@@ -1,5 +1,5 @@
 {
-    "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#indexes/$entity",
+    "@odata.context": "<redacted>/$metadata#indexes/$entity",
     "@odata.etag": "\"0x8DCD87B4FD54890\"",
     "name": "pharmacy_unstructured-index",
     "defaultScoringProfile": null,

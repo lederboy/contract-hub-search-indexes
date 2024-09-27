@@ -14,17 +14,24 @@ oai_key = os.environ["OAI_KEY"]
 client = SearchIndexerClient(endpoint, AzureKeyCredential(key))
 index_client = SearchIndexClient(endpoint, AzureKeyCredential(key))
 
+def add_endpoint(json: dict):
+    if "@odata.context" in json:
+        json["@odata.context"].replace("<redacted>",endpoint)
+    return json
 def create_data_source_connection(datasource_json: dict):
     # [START create_data_source_connection]
+    datasource_json = add_endpoint(datasource_json)
     data_source_connection = SearchIndexerDataSourceConnection.from_dict(datasource_json)
     data_source_connection.connection_string = blob_connection_string
     return client.create_or_update_data_source_connection(data_source_connection)
 
 def create_indexer(indexer_json: dict):
+    indexer_json = add_endpoint(indexer_json)
     indexer = SearchIndexer.from_dict(indexer_json)
     return client.create_or_update_indexer(indexer)
     
 def create_index(index_json: dict):
+    index_json = add_endpoint(index_json)
     index = SearchIndex.from_dict(index_json)
     oai_vectorizer = index.vector_search.vectorizers[0].as_dict()
     oai_vectorizer["api_key"] = oai_key
@@ -32,6 +39,7 @@ def create_index(index_json: dict):
     return index_client.create_or_update_index(index)
 
 def create_skillset(skillset_json: dict):
+    skillset_json = add_endpoint(skillset_json)
     skillset = SearchIndexerSkillset.from_dict(skillset_json)
     # set key to oai resource
     oai_skill = skillset.skills[1].as_dict()

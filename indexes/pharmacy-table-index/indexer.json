@@ -1,5 +1,5 @@
 {
-    "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#indexers/$entity",
+    "@odata.context": "<redacted>/$metadata#indexers/$entity",
     "@odata.etag": "\"0x8DCDE797C0F5F6E\"",
     "name": "pharmacy-table-indexer",
     "description": null,

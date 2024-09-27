@@ -1,5 +1,5 @@
 {
-    "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#skillsets/$entity",
+    "@odata.context": "<redacted>/$metadata#skillsets/$entity",
     "@odata.etag": "\"0x8DCD87B4F9EE558\"",
     "name": "pharmacy-unstructured-skillset",
     "description": "Skillset to chunk documents and generate embeddings",

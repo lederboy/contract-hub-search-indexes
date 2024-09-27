@@ -1,5 +1,5 @@
 {
-    "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#datasources/$entity",
+    "@odata.context": "<redacted>/$metadata#datasources/$entity",
     "@odata.etag": "\"0x8DCD87B4F08F355\"",
     "name": "pharmacy-chunk-datasource",
     "description": null,
