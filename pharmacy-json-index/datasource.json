@@ -1,7 +1,7 @@
 {
     "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#datasources/$entity",
     "@odata.etag": "\"0x8DCD87B4F2A5F76\"",
-    "name": "pharmacy-jsons",
+    "name": "pharmacy-json-datasource",
     "description": null,
     "type": "azureblob",
     "subtype": null,

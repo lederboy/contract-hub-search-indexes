@@ -1,22 +1,22 @@
 {
     "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#indexes/$entity",
-    "@odata.etag": "\"0x8DCDF11F50AE1EF\"",
-    "name": "pharmacy-table-index",
+    "@odata.etag": "\"0x8DCD87B4FD54890\"",
+    "name": "pharmacy-unstructured-index",
     "defaultScoringProfile": null,
     "fields": [
       {
-        "name": "id",
+        "name": "chunk_id",
         "type": "Edm.String",
-        "searchable": false,
-        "filterable": false,
+        "searchable": true,
+        "filterable": true,
         "retrievable": true,
         "stored": true,
-        "sortable": false,
-        "facetable": false,
+        "sortable": true,
+        "facetable": true,
         "key": true,
         "indexAnalyzer": null,
         "searchAnalyzer": null,
-        "analyzer": null,
+        "analyzer": "keyword",
         "normalizer": null,
         "dimensions": null,
         "vectorSearchProfile": null,
@@ -24,7 +24,7 @@
         "synonymMaps": []
       },
       {
-        "name": "content",
+        "name": "parent_id",
         "type": "Edm.String",
         "searchable": true,
         "filterable": true,
@@ -35,7 +35,7 @@
         "key": false,
         "indexAnalyzer": null,
         "searchAnalyzer": null,
-        "analyzer": "standard.lucene",
+        "analyzer": null,
         "normalizer": null,
         "dimensions": null,
         "vectorSearchProfile": null,
@@ -43,7 +43,64 @@
         "synonymMaps": []
       },
       {
-        "name": "embedding",
+        "name": "chunk",
+        "type": "Edm.String",
+        "searchable": true,
+        "filterable": false,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": false,
+        "key": false,
+        "indexAnalyzer": null,
+        "searchAnalyzer": null,
+        "analyzer": null,
+        "normalizer": null,
+        "dimensions": null,
+        "vectorSearchProfile": null,
+        "vectorEncoding": null,
+        "synonymMaps": []
+      },
+      {
+        "name": "title",
+        "type": "Edm.String",
+        "searchable": true,
+        "filterable": true,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": false,
+        "key": false,
+        "indexAnalyzer": null,
+        "searchAnalyzer": null,
+        "analyzer": null,
+        "normalizer": null,
+        "dimensions": null,
+        "vectorSearchProfile": null,
+        "vectorEncoding": null,
+        "synonymMaps": []
+      },
+      {
+        "name": "metadata_storage_path",
+        "type": "Edm.String",
+        "searchable": true,
+        "filterable": false,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": false,
+        "key": false,
+        "indexAnalyzer": null,
+        "searchAnalyzer": null,
+        "analyzer": null,
+        "normalizer": null,
+        "dimensions": null,
+        "vectorSearchProfile": null,
+        "vectorEncoding": null,
+        "synonymMaps": []
+      },
+      {
+        "name": "text_vector",
         "type": "Collection(Edm.Single)",
         "searchable": true,
         "filterable": false,
@@ -57,26 +114,7 @@
         "analyzer": null,
         "normalizer": null,
         "dimensions": 1536,
-        "vectorSearchProfile": "vector-profile-1722884703393",
-        "vectorEncoding": null,
-        "synonymMaps": []
-      },
-      {
-        "name": "fileName",
-        "type": "Edm.String",
-        "searchable": true,
-        "filterable": true,
-        "retrievable": true,
-        "stored": true,
-        "sortable": true,
-        "facetable": true,
-        "key": false,
-        "indexAnalyzer": null,
-        "searchAnalyzer": null,
-        "analyzer": "standard.lucene",
-        "normalizer": null,
-        "dimensions": null,
-        "vectorSearchProfile": null,
+        "vectorSearchProfile": "contracts-unstructured-index-azureOpenAi-text-profile",
         "vectorEncoding": null,
         "synonymMaps": []
       }
@@ -96,38 +134,28 @@
       "b": null
     },
     "semantic": {
-      "defaultConfiguration": null,
+      "defaultConfiguration": "basic",
       "configurations": [
         {
-          "name": "table-semantic-config",
-          "prioritizedFields": {
-            "titleField": {
-              "fieldName": "fileName"
-            },
-            "prioritizedContentFields": [],
-            "prioritizedKeywordsFields": []
-          }
-        },
-        {
-          "name": "basic",
-          "prioritizedFields": {
-            "titleField": {
-              "fieldName": "fileName"
-            },
-            "prioritizedContentFields": [
-              {
-                "fieldName": "content"
-              }
-            ],
-            "prioritizedKeywordsFields": []
-          }
+            "name": "basic",
+            "prioritizedFields": {
+              "titleField": {
+                "fieldName": "title"
+              },
+              "prioritizedContentFields": [
+                {
+                  "fieldName": "chunk"
+                }
+              ],
+              "prioritizedKeywordsFields": []
+            }
         }
       ]
     },
     "vectorSearch": {
       "algorithms": [
         {
-          "name": "vector-config-1722884704544",
+          "name": "contracts-unstructured-index-algorithm",
           "kind": "hnsw",
           "hnswParameters": {
             "metric": "cosine",
@@ -140,15 +168,15 @@
       ],
       "profiles": [
         {
-          "name": "vector-profile-1722884703393",
-          "algorithm": "vector-config-1722884704544",
-          "vectorizer": "vectorizer-1722884707753",
-          "compression": "vector-1722884669985-compressor"
+          "name": "contracts-unstructured-index-azureOpenAi-text-profile",
+          "algorithm": "contracts-unstructured-index-algorithm",
+          "vectorizer": "contracts-unstructured-index-azureOpenAi-text-vectorizer",
+          "compression": null
         }
       ],
       "vectorizers": [
         {
-          "name": "vectorizer-1722884707753",
+          "name": "contracts-unstructured-index-azureOpenAi-text-vectorizer",
           "kind": "azureOpenAI",
           "azureOpenAIParameters": {
             "resourceUri": "https://contracts-azoai0.openai.azure.com",
@@ -162,16 +190,6 @@
           "amlParameters": null
         }
       ],
-      "compressions": [
-        {
-          "name": "vector-1722884669985-compressor",
-          "kind": "scalarQuantization",
-          "rerankWithOriginalVectors": true,
-          "defaultOversampling": 4,
-          "scalarQuantizationParameters": {
-            "quantizedDataType": "int8"
-          }
-        }
-      ]
+      "compressions": []
     }
   }

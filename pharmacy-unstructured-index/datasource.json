@@ -1,7 +1,7 @@
 {
     "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#datasources/$entity",
-    "@odata.etag": "\"0x8DCD87B4F45B7F7\"",
-    "name": "pharmacy-summary-datasource",
+    "@odata.etag": "\"0x8DCD87B4F321EF0\"",
+    "name": "pharmacy-unstructured-datasource",
     "description": null,
     "type": "azureblob",
     "subtype": null,
@@ -10,7 +10,7 @@
     },
     "container": {
       "name": "contracts",
-      "query": "embeddedSummaries/pharmacy"
+      "query": "contracts/pharmacy"
     },
     "dataChangeDetectionPolicy": null,
     "dataDeletionDetectionPolicy": null,

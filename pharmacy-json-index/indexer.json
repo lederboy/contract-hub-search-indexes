@@ -1,11 +1,11 @@
 {
     "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#indexers/$entity",
     "@odata.etag": "\"0x8DCDE79890CE53C\"",
-    "name": "pharmacy-jsons-indexer",
+    "name": "pharmacy-json-indexer",
     "description": null,
-    "dataSourceName": "",
+    "dataSourceName": "pharmacy-json-datsource",
     "skillsetName": null,
-    "targetIndexName": "pharmacy-jsons-index",
+    "targetIndexName": "pharmacy-json-index",
     "disabled": null,
     "schedule": null,
     "parameters": {
