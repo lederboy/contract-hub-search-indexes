@@ -1,0 +1,199 @@
+{
+    "@odata.context": "<redacted>/$metadata#indexes/$entity",
+    "@odata.etag": "\"0x8DCDF11EB4CA79F\"",
+    "name": "client_summary-index",
+    "defaultScoringProfile": null,
+    "fields": [
+      {
+        "name": "id",
+        "type": "Edm.String",
+        "searchable": false,
+        "filterable": false,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": false,
+        "key": true,
+        "indexAnalyzer": null,
+        "searchAnalyzer": null,
+        "analyzer": null,
+        "normalizer": null,
+        "dimensions": null,
+        "vectorSearchProfile": null,
+        "vectorEncoding": null,
+        "synonymMaps": []
+      },
+      {
+        "name": "content",
+        "type": "Edm.String",
+        "searchable": true,
+        "filterable": true,
+        "retrievable": true,
+        "stored": true,
+        "sortable": true,
+        "facetable": true,
+        "key": false,
+        "indexAnalyzer": null,
+        "searchAnalyzer": null,
+        "analyzer": "standard.lucene",
+        "normalizer": null,
+        "dimensions": null,
+        "vectorSearchProfile": null,
+        "vectorEncoding": null,
+        "synonymMaps": []
+      },
+      {
+        "name": "embedding",
+        "type": "Collection(Edm.Single)",
+        "searchable": true,
+        "filterable": false,
+        "retrievable": true,
+        "stored": true,
+        "sortable": false,
+        "facetable": false,
+        "key": false,
+        "indexAnalyzer": null,
+        "searchAnalyzer": null,
+        "analyzer": null,
+        "normalizer": null,
+        "dimensions": 1536,
+        "vectorSearchProfile": "vector-profile-1722880301351",
+        "vectorEncoding": null,
+        "synonymMaps": []
+      },
+      {
+        "name": "fileName",
+        "type": "Edm.String",
+        "searchable": true,
+        "filterable": true,
+        "retrievable": true,
+        "stored": true,
+        "sortable": true,
+        "facetable": true,
+        "key": false,
+        "indexAnalyzer": null,
+        "searchAnalyzer": null,
+        "analyzer": "standard.lucene",
+        "normalizer": null,
+        "dimensions": null,
+        "vectorSearchProfile": null,
+        "vectorEncoding": null,
+        "synonymMaps": []
+      }
+    ],
+    "scoringProfiles": [],
+    "corsOptions": null,
+    "suggesters": [],
+    "analyzers": [],
+    "normalizers": [],
+    "tokenizers": [],
+    "tokenFilters": [],
+    "charFilters": [],
+    "encryptionKey": null,
+    "similarity": {
+      "@odata.type": "#Microsoft.Azure.Search.BM25Similarity",
+      "k1": null,
+      "b": null
+    },
+    "semantic": {
+      "defaultConfiguration": null,
+      "configurations": [
+        {
+          "name": "summary-semantic-config",
+          "prioritizedFields": {
+            "titleField": null,
+            "prioritizedContentFields": [
+              {
+                "fieldName": "fileName"
+              }
+            ],
+            "prioritizedKeywordsFields": []
+          }
+        },
+        {
+          "name": "basic-config",
+          "prioritizedFields": {
+            "titleField": {
+              "fieldName": "fileName"
+            },
+            "prioritizedContentFields": [
+              {
+                "fieldName": "content"
+              }
+            ],
+            "prioritizedKeywordsFields": []
+          }
+        },
+        {
+          "name": "basic",
+          "prioritizedFields": {
+            "titleField": {
+              "fieldName": "fileName"
+            },
+            "prioritizedContentFields": [
+              {
+                "fieldName": "content"
+              }
+            ],
+            "prioritizedKeywordsFields": []
+          }
+        }
+      ]
+    },
+    "vectorSearch": {
+      "algorithms": [
+        {
+          "name": "vector-config-1722880302529",
+          "kind": "hnsw",
+          "hnswParameters": {
+            "metric": "cosine",
+            "m": 4,
+            "efConstruction": 400,
+            "efSearch": 500
+          },
+          "exhaustiveKnnParameters": null
+        }
+      ],
+      "profiles": [
+        {
+          "name": "vector-profile-1722880301351",
+          "algorithm": "vector-config-1722880302529",
+          "vectorizer": "vectorizer-1722880304838",
+          "compression": "vector-1722880268297-compressor"
+        },
+        {
+          "name": "vector-profile-1722893877197",
+          "algorithm": "vector-config-1722880302529",
+          "vectorizer": "vectorizer-1722880304838",
+          "compression": null
+        }
+      ],
+      "vectorizers": [
+        {
+          "name": "vectorizer-1722880304838",
+          "kind": "azureOpenAI",
+          "azureOpenAIParameters": {
+            "resourceUri": "https://contracts-azoai0.openai.azure.com",
+            "deploymentId": "text-embedding-ada-002",
+            "apiKey": "<redacted>",
+            "modelName": "text-embedding-ada-002",
+            "authIdentity": null
+          },
+          "customWebApiParameters": null,
+          "aiServicesVisionParameters": null,
+          "amlParameters": null
+        }
+      ],
+      "compressions": [
+        {
+          "name": "vector-1722880268297-compressor",
+          "kind": "scalarQuantization",
+          "rerankWithOriginalVectors": true,
+          "defaultOversampling": 4,
+          "scalarQuantizationParameters": {
+            "quantizedDataType": "int8"
+          }
+        }
+      ]
+    }
+  }

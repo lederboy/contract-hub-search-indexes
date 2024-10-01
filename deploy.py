@@ -14,16 +14,20 @@ oai_key = os.environ["OAI_KEY"]
 client = SearchIndexerClient(endpoint, AzureKeyCredential(key))
 index_client = SearchIndexClient(endpoint, AzureKeyCredential(key))
 
+
 def add_endpoint(json: dict):
     if "@odata.context" in json:
         json["@odata.context"].replace("<redacted>",endpoint)
     return json
+
+
 def create_data_source_connection(datasource_json: dict):
     # [START create_data_source_connection]
     datasource_json = add_endpoint(datasource_json)
     data_source_connection = SearchIndexerDataSourceConnection.from_dict(datasource_json)
     data_source_connection.connection_string = blob_connection_string
     return client.create_or_update_data_source_connection(data_source_connection)
+
 
 def create_indexer(indexer_json: dict):
     indexer_json = add_endpoint(indexer_json)
