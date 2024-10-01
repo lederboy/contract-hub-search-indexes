@@ -1,0 +1,45 @@
+{
+    "@odata.context": "<redacted>/$metadata#indexers/$entity",
+    "@odata.etag": "\"0x8DCDE79732ADB02\"",
+    "name": "client-chunk-indexer",
+    "description": null,
+    "dataSourceName": "client-chunk-datasource",
+    "skillsetName": null,
+    "targetIndexName": "client_chunk-index",
+    "disabled": null,
+    "schedule": null,
+    "parameters": {
+      "batchSize": null,
+      "maxFailedItems": null,
+      "maxFailedItemsPerBatch": null,
+      "base64EncodeKeys": null,
+      "configuration": {
+        "parsingMode": "jsonArray"
+      }
+    },
+    "fieldMappings": [],
+    "outputFieldMappings": [
+      {
+        "sourceFieldName": "/document/AzureSearch_DocumentKey",
+        "targetFieldName": "id",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/content",
+        "targetFieldName": "content",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/embedding",
+        "targetFieldName": "embedding",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/fileName",
+        "targetFieldName": "fileName",
+        "mappingFunction": null
+      }
+    ],
+    "cache": null,
+    "encryptionKey": null
+  }

@@ -1,0 +1,19 @@
+{
+    "@odata.context": "<redacted>/$metadata#datasources/$entity",
+    "@odata.etag": "\"0x8DCD87B4F2A5F76\"",
+    "name": "client-json-datasource",
+    "description": null,
+    "type": "azureblob",
+    "subtype": null,
+    "credentials": {
+      "connectionString": "<redacted>"
+    },
+    "container": {
+      "name": "contracts",
+      "query": "embeddedJsons/client"
+    },
+    "dataChangeDetectionPolicy": null,
+    "dataDeletionDetectionPolicy": null,
+    "encryptionKey": null,
+    "identity": null
+  }
