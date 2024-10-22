@@ -1,0 +1,80 @@
+{
+    "@odata.context": "<>/$metadata#indexers/$entity",
+    "@odata.etag": "\"0x8DCF2CF7E2DDB07\"",
+    "name": "pharmacy-v2-summary-indexer",
+    "description": null,
+    "dataSourceName": "pharmacy-v2-summary-datasource",
+    "skillsetName": null,
+    "targetIndexName": "pharmacy-v2_summary-index",
+    "disabled": null,
+    "schedule": null,
+    "parameters": {
+      "batchSize": null,
+      "maxFailedItems": null,
+      "maxFailedItemsPerBatch": null,
+      "base64EncodeKeys": null,
+      "configuration": {
+        "parsingMode": "json"
+      }
+    },
+    "fieldMappings": [],
+    "outputFieldMappings": [
+      {
+        "sourceFieldName": "/document/content",
+        "targetFieldName": "content",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/embedding",
+        "targetFieldName": "embedding",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/fileName",
+        "targetFieldName": "fileName",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/keyFields/DocumentType",
+        "targetFieldName": "DocumentType",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/keyFields/Company",
+        "targetFieldName": "Company",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/keyFields/EffectiveDate",
+        "targetFieldName": "EffectiveDate",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/keyFields/IsMedicareContract",
+        "targetFieldName": "IsMedicareContract",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/keyFields/LineOfBusiness",
+        "targetFieldName": "LineOfBusiness",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/keyFields/Networks",
+        "targetFieldName": "Networks",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/keyFields/VaccineListAvailable",
+        "targetFieldName": "VaccineListAvailable",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/keyFields/ChainCodes",
+        "targetFieldName": "ChainCodes",
+        "mappingFunction": null
+      }
+    ],
+    "cache": null,
+    "encryptionKey": null
+  }
