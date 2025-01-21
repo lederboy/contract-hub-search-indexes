@@ -1,0 +1,60 @@
+{
+    "@odata.context": "https://contracts-azaisearch.search.windows.net/$metadata#indexers/$entity",
+    "@odata.etag": "\"0x8DCE7151A576D71\"",
+    "name": "rfp-chunk-indexer",
+    "description": null,
+    "dataSourceName": "rfp-chunk-datasource",
+    "skillsetName": null,
+    "targetIndexName": "rfp_chunk-index",
+    "disabled": null,
+    "schedule": null,
+    "parameters": {
+      "batchSize": null,
+      "maxFailedItems": null,
+      "maxFailedItemsPerBatch": null,
+      "base64EncodeKeys": null,
+      "configuration": {
+        "parsingMode": "jsonArray"
+      }
+    },
+    "fieldMappings": [],
+    "outputFieldMappings": [
+      {
+        "sourceFieldName": "/document/id",
+        "targetFieldName": "id",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/content",
+        "targetFieldName": "content",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/embedding",
+        "targetFieldName": "embedding",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/fileName",
+        "targetFieldName": "fileName",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/semanticContext",
+        "targetFieldName": "semanticContext",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/semanticTitle",
+        "targetFieldName": "semanticTitle",
+        "mappingFunction": null
+      },
+      {
+        "sourceFieldName": "/document/semanticKeywords",
+        "targetFieldName": "semanticKeywords",
+        "mappingFunction": { "name" : "jsonArrayToStringCollection" }
+      }
+    ],
+    "cache": null,
+    "encryptionKey": null
+  }

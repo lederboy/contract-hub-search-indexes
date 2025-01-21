@@ -1,0 +1,19 @@
+{
+    "@odata.context": "<redacted>/$metadata#datasources/$entity",
+    "@odata.etag": "\"0x8DCD87B4F08F355\"",
+    "name": "rfp-table-datasource",
+    "description": null,
+    "type": "azureblob",
+    "subtype": null,
+    "credentials": {
+      "connectionString": "<redacted>"
+    },
+    "container": {
+      "name": "contracts",
+      "query": "embeddedTables/RFP"
+    },
+    "dataChangeDetectionPolicy": null,
+    "dataDeletionDetectionPolicy": null,
+    "encryptionKey": null,
+    "identity": null
+  }
